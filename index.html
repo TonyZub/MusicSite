@@ -16,8 +16,10 @@
 
 	iframe 
 	{
+		margin-top: -50px;
 	 display: block; 
 	 border: none;
+	 top:  -50px;
 	}
 
 	</style>
@@ -33,7 +35,7 @@
 		    marginwidth="0" 
 		    width="100%" 
 		    height="100%" 
-		    scrolling="no"
+		    scrolling="auto"
 		    onload="OnIframeLoad(this)"
 		    >
 		</iframe>
@@ -42,8 +44,9 @@
 	<script type="text/javascript">
 
 		function OnIframeLoad(iframe){
-			let adElement = iframe.contentWindow.document.getElementById("WIX_ADS");
-			adElement.parentNode.removeChild(adElement);
+			console.log(window.innerHeight + 50);
+			iframe.style.height = (window.innerHeight + 50).toString() + "px";
+			//adElement.parentNode.removeChild(adElement);
 		}
 
 	</script>
